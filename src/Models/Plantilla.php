@@ -1,6 +1,6 @@
 <?php
 
-namespace Raiz\Modelos;
+namespace Raiz\Models;
 
 class Plantilla{
     private string $texto;
