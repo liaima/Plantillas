@@ -32,32 +32,8 @@ class Plantilla{
             echo $variable."\n";
             $textoMostrado = str_replace($variable, "CambioPrueba", $textoMostrado);                       
         }
-        echo $textoMostrado."\n";
-
-        /*
-        $textoMostrado = $this->texto;
+        return $textoMostrado."\n";
         
-        for($i=0;$i<strlen($textoMostrado);$i++){
-            if ($textoMostrado[$i] == "$" and  $textoMostrado[$i+1] == "[") {
-                $j = $i;
-                $variable = "";
-                while ($textoMostrado[$j] != "]") {
-                    $variable .= $textoMostrado[$j];
-                    $j++;
-                }
-                $variable .= "]";
-
-                echo $variable."\n";
-
-                $textoMostrado = str_replace($variable, "CambioPrueba", $textoMostrado);
-                echo $textoMostrado."\n";
-            }
-            //echo $textoMostrado[$i]."\n";
-        }
-        */
     }
 }
 
-$test = new Plantilla(texto: "Este es el Texto con la variable $[prueba] como queda? $[otraPrueba]");
-
-$test->imprimirPlantilla();
