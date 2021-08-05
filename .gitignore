@@ -2,3 +2,5 @@
 composer.*
 yarn.*
 vendor/*
+.vscode/*
+.phpunit.result.cache

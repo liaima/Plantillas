@@ -1,13 +1,24 @@
-<?php
-
-namespace Raiz\Test;
+<?php declare(strict_types=1);
 
 
+use PHPUnit\Framework\TestCase;
 use Raiz\Models\Plantilla;
 
-class PlantillaTest{
-    private Plantilla $plantilla;
+final class PlantillaTest extends TestCase{
+    
+    public function testImpresionPlantilla(){
+        $texto="Este es el Texto con la variable $[prueba] como queda? $[otraPrueba]";
+        $plantilla = new Plantilla(texto: $texto);
 
+        $plantillaImpresa = $plantilla->imprimirPlantilla();
+
+        echo $plantillaImpresa;
+
+        $this->assertEquals($texto, $plantillaImpresa);
+
+    }
+
+/*
     public function __construct()
     {
         $this->plantilla = new Plantilla(texto: "Este es el Texto con la variable $[prueba] como queda? $[otraPrueba]");
@@ -17,9 +28,10 @@ class PlantillaTest{
         $plantillaImpresa = $this->plantilla->imprimirPlantilla();
 
         echo $plantillaImpresa;
-    }
+    }*/
 }
 
-
+/*
 $test = new PlantillaTest();
 $test->testImpresion();
+*/
